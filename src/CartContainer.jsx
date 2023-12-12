@@ -5,9 +5,8 @@ import { useGlobalContext } from './context'
 
 
 const CartContainer = () => {
-    const {cart} = useGlobalContext()
+    const {cart, clearCart} = useGlobalContext()
     const cartArray = Array.from(cart.entries());
-    
 
     if(cartArray.length ===  0){
         return(
@@ -41,7 +40,7 @@ const CartContainer = () => {
             </div>
             <button 
                 className='btn btn-hipster'
-                onClick={()=> console.log('clear cart')}
+                onClick={clearCart}
             >
                 clear cart
             </button>
